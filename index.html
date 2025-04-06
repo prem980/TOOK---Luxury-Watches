@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Took - Luxury Watches</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">TOOK</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-btn">Home</a>
+            <a href="About Us.html" class="nav-btn">About Us</a>
+            <a href="products.html" class="nav-btn">Products</a>
+            <a href="contact us.html" class="nav-btn">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>WELCOME TO TOOK</h1>
+            <p>We provide the most LUXURY WATCHES
+                 at a reasonable price</p>
+        </div>
+    </section>
+
+    <script>
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+        // Hide loader after page loads
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500); // Match this with the transition duration
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Took - Products</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">TOOK</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="About Us.html" class="nav-btn">About Us</a>
+            <a href="#" class="nav-btn">Products</a>
+            <a href="contact us.html" class="nav-btn">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="blue blux.jpg" alt="Blue Blux Watch">
+                <div class="product-name"></div>
+            </div>
+            <div class="product-price">
+                BLUE BLUX
+                <br>
+                Price- ₹2000</div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="matrixa.jpg" alt="Matrixa Watch">
+                <div class="product-name"></div>
+            </div>
+            <div class="product-price">
+                MATRIXA
+                <br>
+                Price- ₹1500</div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="franktime.jpg" alt="Franktime Watch">
+                <div class="product-name"></div>
+            </div>
+            <div class="product-price">
+                FRANKTIME
+                <br>
+                Price- ₹999</div>
+        </div>
+    </section>
+
+    <!-- Call to Action Text -->
+    <div class="cta-text">
+        You can order these three Premium Watches by <a href="https://forms.gle/uSKvoAK2szfSZk2q8">Contacting Us</a>
+    </div>
+
+    <script>
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Hide loader after page loads
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500); // Match this with the transition duration
+        });
+    </script>
+</body>
+</html>

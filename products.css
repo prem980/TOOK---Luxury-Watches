@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Loader Styles */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* Default styles for desktop view */
+.nav-links {
+    display: flex; /* Ensure links are visible in a row */
+    gap: 25px;
+    font-weight: bold;
+    position: static; /* Remove absolute positioning for desktop */
+    height: auto; /* Ensure height is not restricted */
+    overflow: visible; /* Ensure content is visible */
+    background: none; /* Remove background for desktop */
+    padding: 0; /* Remove extra padding */
+}
+
+.nav-links a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 17.5px;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 10px 15px;
+}
+
+.nav-btn {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 17.5px;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-btn:hover {
+    color: #3498db;
+}
+.nav-links :hover {
+    color: white;
+    background-color: #011c46;
+    border-radius: 10px;
+}
+/* Products Section */
+.products {
+    min-height: calc(100vh - 100px); /* Adjusted to leave space for the CTA text */
+    background: linear-gradient(to bottom, #1a2a44, #0d1a2d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 100px 20px 50px; /* Reduced bottom padding to fit CTA */
+}
+
+.product-card {
+    text-align: center;
+    color: #fff;
+    position: relative; /* For positioning the white shape */
+}
+
+.product-image {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.product-price {
+    margin-top: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+/* White Shape at the Bottom */
+.product-card::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; /* Adjust to position the shape below the card */
+    left: 0;
+    width: 100%;
+    height: 50px; /* Height of the white shape */
+    background: #fff;
+    clip-path: polygon(
+        0% 50%,
+        10% 20%,
+        20% 40%,
+        30% 10%,
+        40% 30%,
+        50% 0%,
+        60% 30%,
+        70% 10%,
+        80% 40%,
+        90% 20%,
+        100% 50%,
+        100% 100%,
+        0% 100%
+    ); /* Creates the irregular, cloud-like shape */
+    z-index: -1; /* Place behind the card */
+}
+
+/* Call to Action Text */
+.cta-text {
+    background: linear-gradient(to bottom, #1a2a44, #0d1a2d);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+.cta-text a {
+    color: #fff;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.cta-text a:hover {
+    color: #3498db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-btn {
+        font-size: 14px;
+    }
+
+    .products {
+        flex-direction: column;
+        gap: 40px; /* Increased gap to account for the white shape */
+        padding: 80px 20px 30px;
+    }
+
+    .product-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .product-name {
+        font-size: 20px;
+    }
+
+    .product-price {
+        font-size: 14px;
+    }
+
+    .product-card::after {
+        bottom: -15px;
+        height: 40px;
+    }
+
+    .cta-text {
+        font-size: 14px;
+        padding: 15px 0;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .hamburger{
+        display: block;
+        cursor: pointer;
+}
+.hamburger .line{
+    width: 25px;
+    height: 2px;
+    background-color: #000000;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+.nav-links {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the items horizontally */
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 0; /* Initially hidden */
+    background: #ffffff;
+    transition: height 0.3s ease-in-out; /* Smooth transition */
+    overflow: hidden; /* Prevent content from overflowing */
+    z-index: 1000;
+}
+
+.nav-links.active {
+    height: auto; /* Expand to fit content */
+    padding: 20px 0; /* Add spacing when active */
+}
+
+.nav-links .nav-btn {
+    display: block;
+    width: fit-content;
+    margin: 10px auto; /* Adjust margin for better spacing */
+    text-align: center;
+    opacity: 1; /* Ensure visibility */
+    transition: opacity 0.5s ease; /* Smooth transition */
+}
+}

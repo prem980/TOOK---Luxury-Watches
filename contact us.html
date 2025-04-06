@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Took - Contact Us</title>
+    <link rel="stylesheet" href="contact us.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">TOOK</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="About Us.html" class="nav-btn">About Us</a>
+            <a href="products.html" class="nav-btn">Products</a>
+            <a href="#" class="nav-btn">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Contact Us Section -->
+    <section class="contact-us">
+        <div class="contact-container">
+            <div class="contact-image">
+                <img src="https://plus.unsplash.com/premium_photo-1675842663249-a8b70103dbaa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Contact Illustration">
+            </div>
+            <div class="contact-form">
+                <h1>Contact Us</h1>
+                <form action="https://getform.io/f/axowneqb" method="POST">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <textarea name="message" placeholder="Your Thought/Order/Queries" rows="5" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+    // Hamburger Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+
+        // Hide loader after page loads
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500); // Match this with the transition duration
+        });
+    </script>
+
+
+
+
+</body>
+</html>

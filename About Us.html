@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Took - About Us</title>
+    <link rel="stylesheet" href="About Us.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">TOOK</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="#" class="nav-btn">About Us</a>
+            <a href="products.html" class="nav-btn">Products</a>
+            <a href="contact us.html" class="nav-btn">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- About Us Section -->
+    <section class="about-us">
+        <div class="about-content">
+            <h1>ABOUT US</h1>
+            <p>
+                At Took, we believe luxury shouldn’t come with an extravagant price tag. Our mission is to redefine elegance by crafting premium, stylish, and high-quality watches that exude sophistication—without the excessive markup.
+            </p>
+            <p>
+                Designed for those who appreciate timeless craftsmanship, our watches combine precision engineering, luxury aesthetics, and affordability, making them the perfect statement piece for any occasion. Whether you’re dressing for success or seeking the perfect accessory, Took ensures that style and quality remain within reach.
+            </p>
+            <p>
+                Elevate your wrist game.<br>
+                Experience luxury, redefined.
+            </p>
+            <p class="signature">-TOOK</p>
+        </div>
+    </section>
+
+    <script>
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+        // Hide loader after page loads
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500); // Match this with the transition duration
+        });
+    </script>
+</body>
+</html>
